@@ -1,0 +1,39 @@
+% Commandes customs pour faciliter et accélérer la rédaction du doc.
+
+% Créé un bloc bleu de définition.
+\newcommand{\definitionbloc}[1]{
+    \begin{mybox}{custom_blue}
+        \textbf{\textcolor{custom_blue}{Définition}  \Gls{#1}} 
+        \vspace{2mm} \\ 
+        \glsdesc*{#1}
+    \end{mybox}
+}
+
+% Créé un bloc gris de note.
+\newcommand{\notebloc}[1]{
+    \begin{mybox}{custom_gray}
+        \textbf{\textcolor{custom_gray}{Note}}
+        \vspace{2mm} \\ 
+        {#1}
+    \end{mybox}
+}
+
+% Ajoute une entrée dans la glossaire en citant la source.
+\newcommand{\newdefinition}[4]
+{
+    \newglossaryentry{#1}
+    {
+        name={#2},
+        description={{#4}\vspace{1mm}\\
+        {\small\mycitation{#3}}}
+    }
+}
+
+% Cite un document sous un format personnalisé.
+\newcommand{\mycitation}[1]{
+    \textit{\citefield{#1}{title} \cite{#1}}
+}
+
+% Cite une figure sous un format personnalisé.
+\newcommand{\myfigurereference}[1]
+{(\textit{voir fig.\ref{#1} page \pageref{#1}})}
