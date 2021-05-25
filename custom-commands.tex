@@ -3,8 +3,16 @@
 % Créé un bloc bleu de définition.
 \newcommand{\definitionbloc}[1]{
     \begin{mybox}{custom_blue}
-        \textbf{\textcolor{custom_blue}{Définition}  \Gls{#1}} 
-        \vspace{2mm} \\ 
+        \textbf{\textcolor{custom_blue}{Définition}  \Gls{#1}}
+        \vspace{2mm} \\
+        \glsdesc*{#1}
+    \end{mybox}
+}
+
+\newcommand{\definitionblocen}[1]{
+    \begin{mybox}{custom_blue}
+        \textbf{\textcolor{custom_blue}{Definition}  \Gls{#1}}
+        \vspace{2mm} \\
         \glsdesc*{#1}
     \end{mybox}
 }
@@ -13,7 +21,7 @@
 \newcommand{\notebloc}[1]{
     \begin{mybox}{custom_gray}
         \textbf{\textcolor{custom_gray}{Note}}
-        \vspace{2mm} \\ 
+        \vspace{2mm} \\
         {#1}
     \end{mybox}
 }
