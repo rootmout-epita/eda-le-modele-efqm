@@ -1,0 +1,38 @@
+---
+name: "create release"
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  create-release:
+    name: "create release"
+    runs-on: "ubuntu-latest"
+    defaults:
+      run:
+        shell: bash
+    container:
+      image: aergus/latex
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v2
+
+      - name: fetch tag name
+        run: echo "RELEASE=${GITHUB_REF/refs\/tags\//}" >> $GITHUB_ENV
+
+      - name: fetch commit short SHA
+        run: echo "SHORT_SHA=`echo ${GITHUB_SHA} | cut -c1-8`" >> $GITHUB_ENV
+
+      - name: build pdf file
+        run: bash .github/workflows/build.sh ${{ env.RELEASE }} ${{ env.SHORT_SHA }}
+
+      - name: create release
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          files: |
+            LICENSE.txt
+            eda-le-modele-efqm-${{ env.RELEASE }}.pdf
