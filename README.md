@@ -19,4 +19,5 @@ Commande pour générer le pdf `eda-le-modele-efqm-local-build.pdf`
 
 ---
 EPITA, TCOM Promotion 2022, Groupe 3\
-Melchior DE ROQUEFEUIL, Pierre KELBERT, Marc SCHMITT
+Melchior DE ROQUEFEUIL, Pierre KELBERT, Marc SCHMITT\
+Illustration de la première de couverture réalisée par [starline / Freepik](https://www.freepik.com/free-vector/stylish-hexagonal-line-abstract-background_5432181.htm)
