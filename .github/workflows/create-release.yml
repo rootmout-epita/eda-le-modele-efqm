@@ -34,5 +34,5 @@ jobs:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
           files: |
-            LICENSE.txt
+            LICENSE
             eda-le-modele-efqm-${{ env.RELEASE }}.pdf
