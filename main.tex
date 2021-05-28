@@ -29,7 +29,7 @@
 \definecolor{custom_blue}{HTML}{4C89EB}
 \definecolor{custom_gray}{HTML}{202729}
 
-%% BLOCS SETTINGS.      ==========
+%% BLOCS SETTINGS       ==========
 \newtcolorbox{mybox}[1]{
     enhanced,
     boxrule=0pt,frame hidden,
@@ -111,11 +111,13 @@
 \clearpage
 
 \listoffigures
+\addcontentsline{toc}{section}{\listfigurename}
 \clearpage
 
 \printbibliography
+\addcontentsline{toc}{section}{\refname}
 \nocite{*}
 
-\input{text/credentials}
+\include{text/credentials}
 
 \end{document}
